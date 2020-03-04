@@ -8,13 +8,16 @@ import store from "./store";
 
 const App = () => {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <AppContainer>
-          <BaseRouter />
-        </AppContainer>
-      </BrowserRouter>
-    </Provider>
+    (
+      <Provider store={store}>
+        <BrowserRouter>
+          <AppContainer>
+            <BaseRouter />
+          </AppContainer>
+        </BrowserRouter>
+      </Provider>
+    ),
+    document.getElementById("root")
   );
 };
 export default App;
