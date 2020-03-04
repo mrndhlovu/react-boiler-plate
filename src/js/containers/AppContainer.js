@@ -1,8 +1,6 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React from "react";
 
 import styled from "styled-components";
-import { getAuth } from "../actions/AuthActions";
 
 const StyledAppContainerDiv = styled.div`
   min-height: 60rem;
@@ -10,14 +8,8 @@ const StyledAppContainerDiv = styled.div`
   padding-bottom: 2rem;
 `;
 
-class AppContainer extends Component {
-  componentDidMount() {
-    this.props.getAuth();
-  }
+const AppContainer = ({ children }) => {
+  return <StyledAppContainerDiv>{children}</StyledAppContainerDiv>;
+};
 
-  render() {
-    return <StyledAppContainerDiv>{this.props.children}</StyledAppContainerDiv>;
-  }
-}
-
-export default connect(null, { getAuth })(AppContainer);
+export default AppContainer;

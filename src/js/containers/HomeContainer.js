@@ -1,9 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
-class HomeContainer extends Component {
-  render() {
-    return <div>React boiler plate</div>;
-  }
-}
+const HomeContainer = () => {
+  return <div>React App</div>;
+};
 
 export default HomeContainer;

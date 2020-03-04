@@ -1,34 +1,20 @@
-import React, { Component } from "react";
-import { Provider } from "react-redux";
-import { Provider as AlertProvider } from "react-alert";
-import AlertTemplate from "react-alert-template-basic";
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 
-import store from "./store";
-import BaseRouter from "./Routes";
-import Alerts from "./utils/Alerts";
-import "../App.css";
 import AppContainer from "./containers/AppContainer";
+import BaseRouter from "./Routes";
+import store from "./store";
 
-const alertStyle = {
-  timeout: 3000,
-  position: "top center"
+const App = () => {
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <AppContainer>
+          <BaseRouter />
+        </AppContainer>
+      </BrowserRouter>
+    </Provider>
+  );
 };
-
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <BrowserRouter>
-          <AlertProvider template={AlertTemplate} {...alertStyle}>
-            <AppContainer>
-              <Alerts />
-              <BaseRouter />
-            </AppContainer>
-          </AlertProvider>
-        </BrowserRouter>
-      </Provider>
-    );
-  }
-}
 export default App;
