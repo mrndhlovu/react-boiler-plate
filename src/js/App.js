@@ -21,7 +21,7 @@ export default class App extends Component {
           </AppContainer>
         </BrowserRouter>
       </Provider>,
-      document.getElementById("root")
+      document.getElementById("app")
     );
   }
 }
