@@ -1,10 +1,10 @@
-const path = require("path");
+const { join } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/start.js",
   output: {
-    path: path.join(__dirname, "/dist"),
+    path: join(__dirname, "/dist"),
     filename: "start_bundle.js"
   },
   module: {
