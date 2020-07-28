@@ -9,7 +9,11 @@ const StyledAppContainerDiv = styled.div`
 `;
 
 const AppContainer = ({ children }) => {
-  return <StyledAppContainerDiv>{children}</StyledAppContainerDiv>;
+  return (
+    <StyledAppContainerDiv data-test-id="appContainer">
+      {children}
+    </StyledAppContainerDiv>
+  );
 };
 
 export default AppContainer;
